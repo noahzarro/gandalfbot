@@ -5,7 +5,6 @@ If it receives a message in a chat it replies with a certain chance one of the f
 - Miau
 - Butter!
 - Fueter!
-- Sefie
 
 ## Reminders (todo)
-Asks every Thursday who's home for dinner and what are the plans for the weekend
+Asks every Thursday who's home for dinner and pins the poll

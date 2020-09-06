@@ -130,3 +130,6 @@ dmypy.json
 
 # Telegram Token
 token.json
+
+# IDE
+.vscode
