@@ -56,7 +56,8 @@ def say(bot, update):
         bot.send_message(chat_id=update.message.chat_id, text="Du hesch mir gar nüt zsege")
 
 
-def send_poll(arg):
+def send_new_poll(arg):
+    print("going to send poll")
     now = datetime.now()
     todays_date = now.strftime("%-d. %B")
     new_poll = updater.bot.send_poll(chat_id=zarro_chat_id, question="Sinder am Fritig zum Znacht do? ("+todays_date+")", options=["Jo", "Nei", "Weiss nonig"], is_anonymous=False)
@@ -67,7 +68,8 @@ dispatcher.add_handler(MessageHandler(Filters.text, message_handler))
 
 updater.start_polling()
 
-reminder_Th = events.TimedEvent(3, 16, 0, send_poll, "Th")
+# send poll next thursday at 16:00
+reminder_Th = events.TimedEvent(3, 16, 0, send_new_poll, "Th")
 
 while True:
     reminder_Th.wait()
