@@ -10,7 +10,13 @@ class TimedEvent:
 
     def wait(self):
         now = datetime.datetime.today()
-        base_monday = now - datetime.timedelta(days=now.weekday(), hours=now.hour, minutes=now.minute, seconds=now.second, microseconds=now.microsecond)
+        base_monday = now - datetime.timedelta(
+            days=now.weekday(),
+            hours=now.hour,
+            minutes=now.minute,
+            seconds=now.second,
+            microseconds=now.microsecond,
+        )
         time_due = base_monday + self.due
         if time_due < now:
             time_due += datetime.timedelta(days=7)
